@@ -580,6 +580,75 @@ button {
   color: var(--muted);
 }
 
+/* ------------------------------------------------------------ experience */
+
+.experience {
+  padding: var(--sectionY) 30px;
+}
+
+.roleRow {
+  padding: 26px 4px;
+  border-top: 1px solid var(--rule);
+}
+
+.roleRow:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Company, role and dates share one baseline, as the work rows do. */
+.roleTop {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+}
+
+.roleTitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.roleTitle a {
+  color: inherit;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.roleTitle a:hover,
+.roleTitle a:focus-visible {
+  color: var(--accentText);
+  border-bottom-color: currentColor;
+}
+
+.roleName {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink2);
+}
+
+.roleDates {
+  margin-left: auto;
+  flex: none;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.roleBlurb {
+  margin: 10px 0 0;
+  max-width: 62ch;
+  font-family: var(--font-serif), serif;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--ink2);
+  text-wrap: pretty;
+}
+
 /* ----------------------------------------------------------------- picks */
 
 .picks {
@@ -832,9 +901,28 @@ button {
 
   .hero,
   .work,
+  .experience,
   .picks {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .roleTop {
+    flex-wrap: wrap;
+    gap: 6px 14px;
+  }
+
+  .roleTitle {
+    font-size: 26px;
+  }
+
+  .roleDates {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .roleBlurb {
+    font-size: 17px;
   }
 
   .chrome {

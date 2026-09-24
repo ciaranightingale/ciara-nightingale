@@ -3,6 +3,7 @@
 import Backdrop from "@/components/Backdrop";
 import Chrome from "@/components/Chrome";
 import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 // import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Picks from "@/components/Picks";
@@ -28,6 +29,7 @@ export default function PageShell({ topTracks }: { topTracks: Track[] | null }) 
       <Hero />
       <Ticker />
       <Work />
+      <Experience />
       {/* Waiting on artwork photos — restore with the import above. */}
       {/* <Gallery /> */}
       <Picks topTracks={topTracks} />

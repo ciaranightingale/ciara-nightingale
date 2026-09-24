@@ -23,6 +23,7 @@ export const CHROME = {
   location: "london, uk",
   nav: [
     { label: "work", href: "#work" },
+    { label: "experience", href: "#experience" },
     { label: "picks", href: "#picks" },
     { label: "contact", href: "#contact" },
   ],
@@ -42,7 +43,7 @@ export const HERO = {
   name: ["Ciara", "Nightingale"],
   lede:
     "Technical educator and physicist, in London. Below: the work, and the things I’d recommend.",
-  explore: "explore - work · picks",
+  explore: "explore - work · experience · picks",
 };
 
 /* ── ticker ───────────────────────────────────────────────────────────────── */
@@ -116,6 +117,71 @@ export const WORK: WorkRow[] = [
   { no: "06", title: "Merkle trees, explained", kind: "video", year: "2024", href: "https://youtu.be/cQIPG_J1W9g", hint: "video still" },
   { no: "07", title: "Elliptic curves", kind: "video", year: "2024", href: "https://youtu.be/CtcHBRph97s", hint: "video still" },
 ];
+
+/* ── experience ───────────────────────────────────────────────────────────── */
+
+export type Role = {
+  company: string;
+  role: string;
+  dates: string;
+  blurb: string;
+  href: string;
+};
+
+export const EXPERIENCE_HEAD = {
+  title: "Experience",
+  note: "technical education · developer relations · research",
+};
+
+export const EXPERIENCE: Role[] = [
+  {
+    company: "Aztec",
+    role: "Technical Educator",
+    dates: "2025 — 2026",
+    blurb:
+      "Courses, talks and documentation on Noir, private smart contracts and the Aztec protocol. Technical liaison between engineering, product and the wider ecosystem. On contract initially, full-time from March 2026.",
+    href: "https://aztec.network",
+  },
+  {
+    company: "Cyfrin",
+    role: "Lead Instructor",
+    dates: "2024 — 2026",
+    blurb:
+      "20+ hours of long-form courses on blockchain development, cryptography and zero-knowledge proofs, plus a suite of interactive demos. Hired and managed two direct reports.",
+    href: "https://www.cyfrin.io",
+  },
+  {
+    company: "Cyfrin",
+    role: "Technical Writer",
+    dates: "2023 — 2024",
+    blurb:
+      "In-depth technical writing analysing blockchain hacks, core cryptography and security concepts for a developer audience.",
+    href: "https://www.cyfrin.io",
+  },
+  {
+    company: "thirdweb",
+    role: "Developer Experience Engineer",
+    dates: "2022 — 2023",
+    blurb:
+      "Tutorials, documentation, workshops and livestreams for developers building web3 applications, and work with engineering to improve developer onboarding.",
+    href: "https://thirdweb.com",
+  },
+  {
+    company: "STFC",
+    role: "Software Engineer",
+    dates: "2019 — 2020",
+    blurb:
+      "Worked on Mantid, the open-source framework for reducing and analysing neutron and muon scattering data used across international facilities.",
+    href: "https://www.mantidproject.org",
+  },
+];
+
+export const EDUCATION = {
+  label: "Education",
+  degree: "BSc Physics, First Class Honours",
+  school: "University of Bath",
+  href: "https://www.bath.ac.uk",
+};
 
 /* ── gallery (section parked until the artwork photos exist) ──────────────── */
 
