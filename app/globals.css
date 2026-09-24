@@ -422,7 +422,7 @@ button {
 
 .title {
   font-weight: 700;
-  font-size: 7.4vw;
+  font-size: 5.4vw;
   line-height: 0.9;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -730,7 +730,7 @@ button {
 
 .contactTitle {
   font-weight: 700;
-  font-size: 8.2vw;
+  font-size: 6.2vw;
   line-height: 0.9;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -996,7 +996,7 @@ button {
   }
 
   .title {
-    font-size: 12vw;
+    font-size: 9.5vw;
   }
 
   .ticker {
@@ -1070,7 +1070,7 @@ button {
   }
 
   .contactTitle {
-    font-size: 12vw;
+    font-size: 10.5vw;
   }
 
   .contactAside {
