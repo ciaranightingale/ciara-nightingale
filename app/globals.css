@@ -736,7 +736,10 @@ button {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  /* The colophon sits where the paper has thinned back to sky, so it takes the
+     hero ink rather than the body ink. In morning and evening the two tokens
+     are the same value; in night this is what keeps it off a dark backdrop. */
+  color: var(--heroMuted);
 }
 
 .colophonLinks {
@@ -745,7 +748,8 @@ button {
 }
 
 .colophonLinks a {
-  border-bottom: 1px solid var(--rule2);
+  /* Derived from the text colour so the underline follows it per edition. */
+  border-bottom: 1px solid color-mix(in srgb, currentColor 45%, transparent);
   padding-bottom: 2px;
 }
 
