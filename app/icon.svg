@@ -1,20 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="CN">
   <title>CN</title>
-  <defs>
-    <!-- The diagonal's cap is perpendicular to its own direction, so it would
-         otherwise poke past the flat tops of the stems. Clipping to the N's own
-         box squares the corners off. -->
-    <clipPath id="n"><rect x="53.5" y="37" width="21" height="26"/></clipPath>
-  </defs>
   <circle cx="50" cy="50" r="50" fill="#ffffff"/>
-  <!-- Drawn as strokes rather than <text>, so the mark renders identically
-       everywhere without depending on a font being installed. -->
-  <g fill="none" stroke="#eb6d99" stroke-width="7" stroke-linecap="butt">
-    <path d="M46.02 41.40 A10.5 10.5 0 1 0 46.02 58.60"/>
-    <g clip-path="url(#n)">
-      <path d="M57 37 L71 63"/>
-      <path d="M57 63 L57 37"/>
-      <path d="M71 63 L71 37"/>
-    </g>
-  </g>
+  <!-- A serif stack rather than outlined paths: unlike the site's display face,
+       a Times-like serif ships with every OS, so this degrades to another
+       newspaper serif instead of something off-brand. -->
+  <text x="50" y="64.5"
+        text-anchor="middle"
+        font-family="Newsreader, 'Times New Roman', Times, Georgia, serif"
+        font-size="44"
+        font-weight="600"
+        letter-spacing="1"
+        fill="#16130f">CN</text>
 </svg>
