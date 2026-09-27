@@ -106,13 +106,13 @@ export const WORK_HEAD = {
 };
 
 export const WORK: WorkRow[] = [
-  { no: "01", title: "Fundamentals of Zero-Knowledge Proofs", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/" },
-  { no: "02", title: "Noir Programming & ZK Circuits", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/" },
+  { no: "01", title: "Fundamentals of Zero-Knowledge Proofs", kind: "course", year: "2025", href: "https://youtu.be/i2FZJBHhy2U" },
+  { no: "02", title: "Noir Programming & ZK Circuits", kind: "course", year: "2025", href: "https://youtu.be/psrIXF85bgA" },
   { no: "03", title: "Interactive protocol demos", kind: "app", year: "2025", href: "https://demos.updraft.cyfrin.io/" },
-  { no: "04", title: "Blockchain Basics", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/" },
-  { no: "05", title: "Signatures, Merkle Trees & Airdrops", kind: "course", year: "2024", href: "https://updraft.cyfrin.io/" },
-  { no: "06", title: "Merkle trees, explained", kind: "video", year: "2024", href: "https://youtu.be/cQIPG_J1W9g" },
-  { no: "07", title: "Elliptic curves", kind: "video", year: "2024", href: "https://youtu.be/CtcHBRph97s" },
+  { no: "04", title: "Blockchain Basics", kind: "course", year: "2025", href: "https://youtu.be/sw4NAjY1bg8" },
+  { no: "05", title: "Signatures, Merkle Trees & Airdrops", kind: "course", year: "2024", href: "https://youtu.be/jGC3pGCfYQE" },
+  { no: "06", title: "Merkle trees, explained", kind: "video", year: "2024", href: "https://youtu.be/s7C2KjZ9n2U" },
+  { no: "07", title: "Elliptic curves", kind: "video", year: "2024", href: "https://youtu.be/e3ugVpBBlhc" },
 ];
 
 /* ── experience ───────────────────────────────────────────────────────────── */

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Mono, Newsreader } from "next/font/google";
 import { META } from "@/lib/content";
+import { EDITION_STORAGE_KEY, EDITION_THEME } from "@/lib/editions";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#8ec3e8",
+  // Replaced before paint by restoreEdition below, and on every edition change.
+  themeColor: EDITION_THEME.morning,
 };
 
 /**
@@ -41,7 +43,13 @@ export const viewport: Viewport = {
  * user picked on the next reconciliation. The stylesheet treats a missing
  * attribute as morning, so server output is correct without it.
  */
-const restoreEdition = `try{var e=localStorage.getItem('cn-site-edition');document.documentElement.dataset.edition=(e==='evening'||e==='night')?e:'morning';}catch(_){}`;
+const restoreEdition = `try{
+  var e = localStorage.getItem('${EDITION_STORAGE_KEY}');
+  e = (e === 'evening' || e === 'night') ? e : 'morning';
+  document.documentElement.dataset.edition = e;
+  var m = document.querySelector('meta[name="theme-color"]');
+  if (m) m.setAttribute('content', ${JSON.stringify(EDITION_THEME)}[e]);
+}catch(_){}`;
 
 export default function RootLayout({
   children,

@@ -2,6 +2,10 @@
 
 :root,
 :root[data-edition="morning"] {
+  --chromeBg: rgba(246, 241, 232, 0.74);
+  --chromeInk: #16130f;
+  --chromeMuted: #6b6158;
+
   --ink: #16130f;
   --ink2: #3d372f;
   --muted: #6b6158;
@@ -30,6 +34,10 @@
 }
 
 :root[data-edition="evening"] {
+  --chromeBg: rgba(250, 236, 222, 0.76);
+  --chromeInk: #1a1310;
+  --chromeMuted: #7a6252;
+
   --ink: #1a1310;
   --ink2: #4a3a30;
   --muted: #7a6252;
@@ -61,6 +69,10 @@
  * 1.57:1. --accentText is darker than the --accent fill for the same reason.
  */
 :root[data-edition="night"] {
+  --chromeBg: rgba(28, 24, 46, 0.72);
+  --chromeInk: #f2eef6;
+  --chromeMuted: #b9b1cc;
+
   --ink: #151220;
   --ink2: #3a3450;
   --muted: #4a4360;
@@ -220,8 +232,8 @@ button {
   font-size: 10.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink);
-  background: var(--f3);
+  color: var(--chromeInk);
+  background: var(--chromeBg);
   border-bottom: 1px solid var(--ruleSoft);
   backdrop-filter: blur(14px) saturate(1.15);
   -webkit-backdrop-filter: blur(14px) saturate(1.15);
@@ -254,7 +266,7 @@ button {
 
 .chromeSub,
 .chromeRight {
-  color: var(--muted);
+  color: var(--chromeMuted);
   transition: color 0.4s ease;
 }
 
@@ -290,6 +302,7 @@ button {
 }
 
 .stamp button {
+  color: inherit;
   font-family: var(--font-mono), monospace;
   font-size: 9.5px;
   letter-spacing: 0.14em;
