@@ -934,7 +934,12 @@ button {
     padding: 5px 6px;
   }
 
+  /* Hand back enough height for the ticker to sit on the first screen, so the
+     fact is read before any scrolling. svh is the viewport with the browser UI
+     showing, which is what the reader actually sees on landing. */
   .hero {
+    min-height: calc(100vh - 96px);
+    min-height: calc(100svh - 96px);
     padding-top: 92px;
     padding-bottom: 28px;
   }
@@ -980,15 +985,11 @@ button {
   }
 
   .ticker {
-    padding: 26px 0;
+    padding: 18px 0;
   }
 
   .ticker .marquee {
-    font-size: 40px;
-  }
-
-  .ticker span {
-    padding-right: 28px;
+    font-size: 24px;
   }
 
   .work {
