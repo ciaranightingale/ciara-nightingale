@@ -52,24 +52,35 @@ const mix = (a: string, b: string, t: number) => {
 /** Scroll fraction the opening colour holds for before the mid colour takes over. */
 const HOLD = 0.22;
 
+const clamp = (t: number) => Math.max(0, Math.min(1, t));
+
 /**
- * `t` is scroll progress 0–1. The opening colour holds briefly, then the page
- * moves off the mid colour quickly — easing the second leg stops the middle of
- * the scroll from sitting in one flat tone for most of its length.
+ * One stop's colour at scroll fraction `c`. The opening colour holds briefly,
+ * then the page moves off the mid colour quickly — easing the second leg stops
+ * the middle of the scroll from sitting in one flat tone for most of its length.
  */
+function stopColour(s: SkyStop, c: number) {
+  if (c < HOLD) return mix(s[0], s[1], c / HOLD);
+  return mix(s[1], s[2], Math.pow((c - HOLD) / (1 - HOLD), 0.62));
+}
+
+/** `t` is scroll progress 0–1. */
 export function mixSky(t: number, edition: Edition) {
-  const c = Math.max(0, Math.min(1, t));
-  const stops = SKY[edition].map((s) => {
-    let colour;
-    if (c < HOLD) {
-      colour = mix(s[0], s[1], c / HOLD);
-    } else {
-      const u = (c - HOLD) / (1 - HOLD);
-      colour = mix(s[1], s[2], Math.pow(u, 0.62));
-    }
-    return `${colour} ${s[3]}%`;
-  });
+  const c = clamp(t);
+  const stops = SKY[edition].map((s) => `${stopColour(s, c)} ${s[3]}%`);
   return `linear-gradient(180deg, ${stops.join(", ")})`;
+}
+
+/**
+ * Colour for the page canvas — what a phone reveals in the gutter when the
+ * reader rubber-bands past the top or bottom of the page. A static colour can
+ * only ever match one end, so this follows whichever end they are nearest and
+ * the gutter continues the sky instead of showing the other end of the day.
+ */
+export function skyEdge(t: number, edition: Edition) {
+  const c = clamp(t);
+  const stops = SKY[edition];
+  return stopColour(c < 0.5 ? stops[0] : stops[stops.length - 1], c);
 }
 
 /**
