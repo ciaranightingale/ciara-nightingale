@@ -2,6 +2,8 @@
 
 :root,
 :root[data-edition="morning"] {
+  --heroAccent: #6d1435;
+
   --chromeBg: rgba(246, 241, 232, 0.74);
   --chromeInk: #16130f;
   --chromeMuted: #6b6158;
@@ -34,6 +36,8 @@
 }
 
 :root[data-edition="evening"] {
+  --heroAccent: #5c1e11;
+
   --chromeBg: rgba(250, 236, 222, 0.76);
   --chromeInk: #1a1310;
   --chromeMuted: #7a6252;
@@ -69,6 +73,8 @@
  * 1.57:1. --accentText is darker than the --accent fill for the same reason.
  */
 :root[data-edition="night"] {
+  --heroAccent: #ddd0f0;
+
   --chromeBg: rgba(28, 24, 46, 0.72);
   --chromeInk: #f2eef6;
   --chromeMuted: #b9b1cc;
@@ -110,6 +116,11 @@ body {
   padding: 0;
   background: var(--bodyBg);
   -webkit-font-smoothing: antialiased;
+  /* The sky is fixed to the viewport, so a rubber-band pull past either end
+     exposes the canvas behind it. Refusing the bounce means there is no gutter
+     to show — PageShell still keeps the canvas on the sky for anything that
+     ignores this. */
+  overscroll-behavior: none;
 }
 
 body {
@@ -381,6 +392,7 @@ button {
 
 .ticker {
   overflow: hidden;
+  color: var(--heroInk);
   padding: 36px 0;
   border-top: 1px solid var(--accentRule);
   border-bottom: 1px solid var(--accentRule);
@@ -412,11 +424,11 @@ button {
   font-family: var(--font-serif), serif;
   font-weight: 300;
   font-style: italic;
-  color: var(--accentText);
+  color: var(--heroAccent);
 }
 
 .tickerDot {
-  color: var(--accentText);
+  color: var(--heroAccent);
 }
 
 /* -------------------------------------------------------------- sections */
