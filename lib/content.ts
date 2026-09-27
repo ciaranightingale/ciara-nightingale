@@ -42,7 +42,7 @@ export const HERO = {
   /** Rendered one line per entry. */
   name: ["Ciara", "Nightingale"],
   lede:
-    "Technical educator and physicist, in London. Below: the work, and the things I’d recommend.",
+    "Technical educator and physicist, in London. Below: my work, and the things I’d recommend.",
   explore: "explore - work · experience · picks",
 };
 
