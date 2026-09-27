@@ -1049,16 +1049,10 @@ button {
     max-width: 100%;
   }
 
+  /* A full-width band of moving type is too heavy on a phone, where it fills
+     most of the footer. The contact details carry the section instead. */
   .hello {
-    padding: 20px 0;
-  }
-
-  .hello .marquee {
-    font-size: 34px;
-  }
-
-  .hello span {
-    padding-right: 26px;
+    display: none;
   }
 
   .colophon {
