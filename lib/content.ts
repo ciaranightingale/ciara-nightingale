@@ -97,25 +97,22 @@ export type WorkRow = {
   kind: string;
   year: string;
   href: string;
-  hint: string;
-  /** Client drops a real image in here; until then the tinted frame shows. */
-  src?: string;
 };
 
 export const WORK_HEAD = {
   /** Rendered one line per entry. */
   title: ["Selected", "work"],
-  note: "hover: courses, video, demos",
+  note: "courses, video, demos",
 };
 
 export const WORK: WorkRow[] = [
-  { no: "01", title: "Fundamentals of Zero-Knowledge Proofs", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/", hint: "course cover" },
-  { no: "02", title: "Noir Programming & ZK Circuits", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/", hint: "course cover" },
-  { no: "03", title: "Interactive protocol demos", kind: "app", year: "2025", href: "https://demos.updraft.cyfrin.io/", hint: "demo screenshot" },
-  { no: "04", title: "Blockchain Basics", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/", hint: "course cover" },
-  { no: "05", title: "Signatures, Merkle Trees & Airdrops", kind: "course", year: "2024", href: "https://updraft.cyfrin.io/", hint: "course cover" },
-  { no: "06", title: "Merkle trees, explained", kind: "video", year: "2024", href: "https://youtu.be/cQIPG_J1W9g", hint: "video still" },
-  { no: "07", title: "Elliptic curves", kind: "video", year: "2024", href: "https://youtu.be/CtcHBRph97s", hint: "video still" },
+  { no: "01", title: "Fundamentals of Zero-Knowledge Proofs", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/" },
+  { no: "02", title: "Noir Programming & ZK Circuits", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/" },
+  { no: "03", title: "Interactive protocol demos", kind: "app", year: "2025", href: "https://demos.updraft.cyfrin.io/" },
+  { no: "04", title: "Blockchain Basics", kind: "course", year: "2025", href: "https://updraft.cyfrin.io/" },
+  { no: "05", title: "Signatures, Merkle Trees & Airdrops", kind: "course", year: "2024", href: "https://updraft.cyfrin.io/" },
+  { no: "06", title: "Merkle trees, explained", kind: "video", year: "2024", href: "https://youtu.be/cQIPG_J1W9g" },
+  { no: "07", title: "Elliptic curves", kind: "video", year: "2024", href: "https://youtu.be/CtcHBRph97s" },
 ];
 
 /* ── experience ───────────────────────────────────────────────────────────── */

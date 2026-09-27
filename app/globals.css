@@ -505,39 +505,6 @@ button {
   color: var(--muted);
 }
 
-/* Cursor-following preview. Its transform is written straight to the node. */
-.preview {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 300px;
-  height: 300px;
-  z-index: 90;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.previewCard {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 0.61, 0.24, 1);
-}
-
-.previewCard[data-shown="true"] {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.previewFrame {
-  height: 100%;
-}
-
 /* ------------------------------------------------------- gallery + rails */
 
 .rail {
@@ -1110,7 +1077,6 @@ button {
   }
 
   .workTitle,
-  .previewCard,
   .sky {
     transition: none;
   }
