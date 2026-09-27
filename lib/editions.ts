@@ -83,14 +83,4 @@ export function skyEdge(t: number, edition: Edition) {
   return stopColour(c < 0.5 ? stops[0] : stops[stops.length - 1], c);
 }
 
-/**
- * Tints the browser UI on phones — the strip above and below the page. It has
- * to be set from JS because the edition is a user choice, not a media query.
- */
-export const EDITION_THEME: Record<Edition, string> = {
-  morning: "#8ec3e8",
-  evening: "#8fb6d8",
-  night: "#26375f",
-};
-
 export const EDITION_STORAGE_KEY = "cn-site-edition";

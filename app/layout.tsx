@@ -1,7 +1,7 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Mono, Newsreader } from "next/font/google";
 import { META } from "@/lib/content";
-import { EDITION_STORAGE_KEY, EDITION_THEME } from "@/lib/editions";
+import { EDITION_STORAGE_KEY } from "@/lib/editions";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   description: META.description,
 };
 
-export const viewport: Viewport = {
-  // Replaced before paint by restoreEdition below, and on every edition change.
-  themeColor: EDITION_THEME.morning,
-};
-
 /**
  * Restores the saved edition before first paint so the page never flashes the
  * morning palette on top of a night sky.
+ *
+ * No theme-color meta is declared: iOS Safari reads that once and then ignores
+ * changes, so any fixed value locks the phone's status and address bars to one
+ * edition. Without it the browser samples the page itself and the bars follow
+ * whichever edition and section the reader is actually looking at.
  *
  * `data-edition` is deliberately NOT rendered by React — the client owns it
  * outright. If React also held it in its tree it would overwrite whatever the
@@ -47,8 +47,6 @@ const restoreEdition = `try{
   var e = localStorage.getItem('${EDITION_STORAGE_KEY}');
   e = (e === 'evening' || e === 'night') ? e : 'morning';
   document.documentElement.dataset.edition = e;
-  var m = document.querySelector('meta[name="theme-color"]');
-  if (m) m.setAttribute('content', ${JSON.stringify(EDITION_THEME)}[e]);
 }catch(_){}`;
 
 export default function RootLayout({

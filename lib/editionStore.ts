@@ -1,4 +1,4 @@
-import { EDITION_STORAGE_KEY, EDITION_THEME, type Edition } from "./editions";
+import { EDITION_STORAGE_KEY, type Edition } from "./editions";
 
 /**
  * The edition lives on `documentElement`'s data attribute — written before first
@@ -31,9 +31,6 @@ export function getServerSnapshot(): Edition {
 
 export function setEdition(next: Edition) {
   document.documentElement.dataset.edition = next;
-  document
-    .querySelector('meta[name="theme-color"]')
-    ?.setAttribute("content", EDITION_THEME[next]);
   try {
     localStorage.setItem(EDITION_STORAGE_KEY, next);
   } catch {
